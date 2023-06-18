@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard</title>
+	<style type="text/css">
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+			padding: 20px;
+		}
+		h1 {
+			text-align: center;
+			font-size: 36px;
+			margin-bottom: 30px;
+		}
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			background-color: #fff;
+			padding: 30px;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.1);
+		}
+		.btn-container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+		}
+		.btn {
+			background-color: navy;
+			color: whitesmoke;
+			font-size: 24px;
+			padding: 20px 30px;
+			border: none;
+			border-radius: 10px;
+			margin: 20px;
+			cursor: pointer;
+		}
+		.btn:hover {
+			background-color: #555;
+		}
+		.action {
+			text-align: center;
+			font-size: 24px;
+			margin-bottom: 30px;
+		}
+		.back {
+			float: left;
+			background-color: navy;
+			color: #fff;
+			padding: 10px 20px;
+			border-radius: 5px;
+			border: none;
+			cursor: pointer;
+			font-size: 18px;
+		}
+		.logout {
+			float: right;
+			background-color: navy;
+			color: #fff;
+			padding: 10px 20px;
+			border-radius: 5px;
+			border: none;
+			cursor: pointer;
+			font-size: 18px;
+		}
+		.logout:hover {
+			background-color: black;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<button class="logout"onclick="window.location.href='login.html';">Logout</button>
+		<button class="back"onclick="window.location.href='login.html';">Back</button>
+		<h1>Dashboard</h1>
+		<p class="action">Choose an action</p>
+		<div class="btn-container">
+			<button class="btn"onclick="window.location.href='submitapplication.html';">Submit an Application</button>
+			<button class="btn"onclick="window.location.href='search.html';">Search an Application</button>
+			<button class="btn"onclick="window.location.href='track.html';">Track Application</button>
+		</div>
+	</div>
+</body>
+</html>

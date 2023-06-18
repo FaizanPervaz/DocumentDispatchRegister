@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Pending Applications</title>
+  <style>
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      color: navy;
+      margin-left : 600px;
+    }
+    input[type="text"], select {
+      background-color: lavender;
+      padding: 12px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      background-color: navy;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: navy;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      text-align: left;
+      padding: 8px;
+    }
+    th {
+      background-color: navy;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: white;
+    }
+
+      .btn {
+			padding: 20px;
+			margin-right: 14px;
+			background-color: navy;
+			color: whitesmoke;
+			border: none;
+			border-radius: 6px;
+			cursor: pointer;
+		}
+
+		.btn:hover {
+			background-color: black;
+		}
+    .logout {
+			margin-left: auto;
+			position: absolute;
+			top: 20px;
+			right: 20px;
+		}
+    .Home {
+			/* margin-left: ; */
+			position: absolute;
+			top: 20px;
+			left: 20px;
+		}
+    
+  </style>
+</head>
+<body>
+  <h1>Search Applications</h1>
+  <div class="logout">
+		<button class="btn"onclick="window.location.href='login.html';">Logout</button>
+	</div>
+  <div class="Home">
+		<button class="btn"onclick="window.location.href='options.html';">Home</button>
+	</div>
+  <form>
+    <label for="id">Search by ID:</label>
+    <input type="text" id="id" name="id">
+    <br>
+    <!-- <label for="route">Search by R:</label>
+    <input type="text" id="route" name="route">
+    <br> -->
+    <br>
+    <label for="date">Search by Date:</label>
+    <input type="text" id="date" name="date" placeholder="YYYY-MM-DD">
+    <br>
+    <input type="submit" value="Search">
+  </form>
+  <br>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Route</th>
+        <th>Start Date</th>
+      </tr>
+    </thead>
+    <tbody id="table-body">
+    </tbody>
+  </table>
+
+  <script>
+    // sample data
+    const applications = [
+      {id: "1", route:"Acadmeics (4/5/22) :> Instructor (6/5/22) :> Director (8/5/22) :> Rector (pending)" ,date: "2023-05-01"},
+      {id: "2", route:"Acadmeics (4/5/22) :> Instructor (6/5/22) :> Director (8/5/22) :> Rector (pending)" ,date: "2023-05-02"},
+      {id: "3", route:"Acadmeics (4/5/22) :> Instructor (6/5/22) :> Director (8/5/22) :> Rector (pending)" ,date: "2023-05-03"},
+      {id: "4", route:"Acadmeics (4/5/22) :> Instructor (6/5/22) :> Director (8/5/22) :> Rector (pending)" ,date: "2023-05-04"},
+      {id: "5", route:"Acadmeics (4/5/22) :> Instructor (6/5/22) :> Director (8/5/22) :> Rector (pending)" ,date: "2023-05-05"},
+      {id: "6", route:"Acadmeics (4/5/22) :> Instructor (6/5/22) :> Director (8/5/22) :> Rector (pending)" ,date: "2022-06-05"},
+      {id: "7", route:"Acadmeics (4/5/22) :> Instructor (6/5/22) :> Director (8/5/22) :> Rector (pending)" ,date: "2023-07-05"},
+      {id: "8", route:"Acadmeics (4/5/22) :> Instructor (6/5/22) :> Director (8/5/22) :> Rector (pending)" ,date: "2023-08-05"},
+      {id: "9", route:"Acadmeics (4/5/22) :> Instructor (6/5/22) :> Director (8/5/22) :> Rector (pending)" ,date: "2023-09-05"},
+      {id: "10",route:"Acadmeics (4/5/22) :> Instructor (6/5/22) :> Director (8/5/22) :> Rector (pending)" ,date: "2023-10-05"},
+      {id: "11",route:"Acadmeics (4/5/22) :> Instructor (6/5/22) :> Director (8/5/22) :> Rector (pending)" ,date: "2023-12-05"},
+      {id: "12",route:"Acadmeics (4/5/22) :> Instructor (6/5/22) :> Director (8/5/22) :> Rector (pending)" ,date: "2023-11-05"},
+      {id: "13",route:"Acadmeics (4/5/22) :> Instructor (6/5/22) :> Director (8/5/22) :> Rector (pending)" ,date: "2022-05-15"},
+    ];
+
+    // populate table with sample data
+    const tableBody = document.getElementById("table-body");
+    applications.forEach(application => {
+      const row = tableBody.insertRow();
+      row.insertCell().textContent = application.id;
+      row.insertCell().textContent = application.route;
+      row.insertCell().textContent = application.date;
+      });
+
+      // search functionality
+const searchForm = document.querySelector("form");
+searchForm.addEventListener("submit", event => {
+  event.preventDefault();
+
+  const idInput = document.getElementById("id").value.trim();
+  const dateInput = document.getElementById("date").value.trim();
+
+  const filteredApplications = applications.filter(application => {
+    let matched = true;
+    if (idInput && application.id !== idInput) {
+      matched = false;
+    }
+    if (dateInput && application.date !== dateInput) {
+      matched = false;
+    }
+    return matched;
+  });
+
+  // clear table body
+  while (tableBody.firstChild) {
+    tableBody.removeChild(tableBody.firstChild);
+  }
+
+  // populate table with filtered data
+  filteredApplications.forEach(application => {
+    const row = tableBody.insertRow();
+    row.insertCell().textContent = application.id;
+    row.insertCell().textContent = application.route;
+    row.insertCell().textContent = application.date;
+  });
+});
+
+    </script>
+    </body>
+    </html>
+
+
+

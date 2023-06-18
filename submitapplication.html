@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Submit Application</title>
+	<style>
+		html {
+			height: 100%;
+			min-height: 100%;
+		}
+
+		body {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			width: 100%;
+			text-align: center;
+			font-family: sans-serif;
+		}
+
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-items: center;
+			text-align: left;
+			border: 2px solid black;
+			padding: 40px;
+			margin-top: 80px;
+		}
+		.container > * {
+			flex: 1 0 auto;
+			margin: 0 10px;
+			}
+		.logout {
+			margin-left: auto;
+			position: absolute;
+			top: 20px;
+			right: 20px;
+		}
+		.Home {
+			margin-left: left;
+			position: absolute;
+			top: 20px;
+			left: 20px;
+		}
+
+		.form-input {
+			margin-bottom: 10px;
+		}
+
+		.form-input label {
+			display: inline-block;
+			width: 100px;
+			font-weight: bold;
+		}
+
+		.form-input select,
+		.form-input input[type="text"],
+		.form-input input[type="time"] {
+			padding: 5px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			font-size: 16px;
+			width: 200px;
+		}
+
+		.form-input input[type="date"] {
+			padding: 5px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			font-size: 16px;
+			width: 200px;
+		}
+
+		.btn {
+			padding: 20px;
+			margin-right: 14px;
+			background-color: navy;
+			color: whitesmoke;
+			border: none;
+			border-radius: 6px;
+			cursor: pointer;
+		}
+
+		.btn:hover {
+			background-color: black;
+		}
+	</style>
+</head>
+<body>
+	<div class="Home">
+		<button class="btn"onclick="window.location.href='options.html';">Home</button>
+	</div>
+	<div class="logout">
+		<button class="btn"onclick="window.location.href='login.html';">Logout</button>
+	</div>
+	<div class="container">
+		<h1>Submit Application</h1>
+		<form>
+			<div class="form-input">
+				<label>Doc Id:</label>
+				<span>141</span>
+			</div>
+			<div class="form-input">
+				<label>Title:</label>
+				<select>
+					<option>Change Grade</option>
+					<option>Fee Queries</option>
+					<option>Advance Salary</option>
+					<option>Make Change</option>
+					<option>Retake Exam</option>
+				</select>
+			</div>
+			<div class="form-input">
+				<label>Department:</label>
+				<select>
+					<option>CS</option>
+					<option>SE</option>
+					<option>AI</option>
+					<option>DS</option>
+				</select>
+			</div>
+			<div class="form-input">
+				<label>Description:</label>
+				<input type="text" value="Add Description">
+			</div>
+			<div class="form-input">
+				<label>Select Date:</label>
+				<input type="date">
+			</div>
+			<div class="form-input">
+				<label>Time:</label>
+				<input type="time" value="10:31">
+			</div>
+			<div class="form-input">
+				<label>Status:</label>
+				<select>
+					<option>Pending</option>
+					<option>Completed</option>
+				</select>
+			</div>
+			<div class="form-input">
+				<label>Priority:</label>
+				<select>
+					<option>High</option>
+					<option>Medium</option>
+					<option>Low</option>
+				</select>
+			</div>
+			<div class="form-input">
+				<label>Department:</label>
+				<select>
+					<option>CS</option>
+					<option>SE</option>
+					<option>AI</option>
+					<option>DS</option>
+				</select>
+			</div>
+			
+            <div class="form-input">
+                <label>Application Number:</label>
+                <span>121</span>
+            </div>
+            <div class="form-input">
+                <label>Mobile Number:</label>
+                <span>03116395979</span>
+            </div>
+        </form>
+    </div>
+	<div class="action">Choose an action</div>
+        <button class="btn" onclick="window.location.href='scan.html';">Scan</button>
+		<button class="btn" onclick="window.location.href='search.html';">Search</button>
+		<button class="btn" onclick="window.location.href='submitted.html';">Submit</button>
+		<button class="btn" onclick="window.location.href='scanner.html';">Upload</button>
+		<button class="btn" onclick="window.location.href='route.html';">Route</button>
+	</div>
+</body>
+</html>    

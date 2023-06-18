@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login and Signup Page</title>
+	<style>
+		body {
+			background-color: whitesmoke;
+			font-family: sans-serif;
+		}
+		.container {
+			margin: 0 auto;
+			max-width: 500px;
+			padding: 20px;
+			background-color: #fff;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.3);
+			text-align: center;
+		}
+		h1 {
+			color: #333;
+			margin-bottom: 30px;
+		}
+		input[type="text"], input[type="password"], input[type="number"], input[type="email"] {
+			padding: 10px;
+			margin-bottom: 20px;
+			border-radius: 5px;
+			border: none;
+			box-shadow: 0 0 5px rgba(0,0,0,0.1);
+			width: 100%;
+		}
+		input[type="submit"] {
+			background-color: #333;
+			color: #fff;
+			padding: 10px 20px;
+			border-radius: 5px;
+			border: none;
+			cursor: pointer;
+		}
+		input[type="submit"]:hover {
+			background-color: #555;
+		}
+		.error {
+			color: red;
+			font-style: italic;
+			margin-bottom: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Login</h1>
+        <form method="post" action="options.html"></form>
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email" required>
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password" required>
+			<div class="error"><?php echo $error; ?></div>
+            <button class="button" onclick="window.location.href='options.html';">Login</button>
+		</form>
+		<p>Don't have an account? <a href="signup.html">Signup here</a></p>
+	</div>
+</body>
+</html>

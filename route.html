@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Create Route</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+        background-color: #f2f2f2;
+      }
+      
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        color: black;
+      }
+      
+      .header h1 {
+        margin: auto;
+        font-size: 30px;
+        padding : 20px;
+      }
+      .Home {
+			margin-left: left;
+			position: absolute;
+			top: 20px;
+			left: 20px;
+		}
+      .logout {
+        display: flex;
+        align-items: center;
+      }
+      
+      .logout button {
+        background-color: navy;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      
+      .logout button:hover {
+        background-color: black;
+      }
+      
+      .form-container {
+        margin: 50px auto;
+        padding: 30px;
+        max-width: 600px;
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        text-align: center;
+      }
+      
+      label {
+        display: inline-block;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        text-align: left;
+        width: 50px;
+      }
+      
+      select {
+        font-size: 16px;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        background-color: #f2f2f2;
+        margin-right: 10px;
+        width: 150px;
+      }
+      .form-input {
+			padding: 5px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			font-size: 16px;
+			width: 200px;
+            margin : auto;
+		}
+
+      .checkbox {
+        margin-right: 10px;
+      }
+      .btn {
+			padding: 20px;
+			margin-right: 14px;
+			background-color: navy;
+			color: whitesmoke;
+			border: none;
+			border-radius: 6px;
+			cursor: pointer;
+		}
+
+		.btn:hover {
+			background-color: black;
+		}
+      #btn {
+        background-color: navy;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+      
+      #btn:hover {
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header section -->
+    <div class="header">
+      <h1>Create Route</h1>
+      <div class="Home">
+        <button class="btn"onclick="window.location.href='options.html';">Home</button>
+      </div>
+      <div class="logout">
+          <button onclick="window.location.href='login.html';">Logout</button>
+        </div>
+    </div>
+    <div class="form-input">
+        <label>Document Id:</label>
+        <span>141</span>
+    </div>
+    
+    <!-- Form section -->
+    <div class="form-container">
+      <label for="from">From:</label>
+      <select id="from">
+        <option value="academics">Academics</option>
+        <option value="director">Director</option>
+        <option value="rector">Rector</option>
+        <option value="hod">HOD</option>
+        <option value="instructor">Instructor</option>
+      </select>
+      <label for="to">To:</label>
+      <select id="to">
+        <option value="academics">Academics</option>
+        <option value="hod">HOD</option>
+        <option value="director">Director</option>
+        <option value="rector">Rector</option>
+        <option value="academics-applicant">Academics Applicant</option>
+    </select>
+    <br><br>
+    <button id="btn"onclick="window.location.href='track.html';">OK</button>
+    </div>
+    
+      </body>
+    </html>
